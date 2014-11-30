@@ -16,15 +16,16 @@ public class Diamond {
 
 		List<String> rows = new ArrayList<>();
 
-		rows.add(firstRow(letters_interval));
-
-		for (int i = 1; i <= letters_interval; i++) {
+		for (int i = 0; i <= letters_interval; i++) {
 			char currentLetter = (char)(START_LETTER + i);
 			String row = dashes(stopLetter - currentLetter) +
 						currentLetter +
-						innerDashes(currentLetter - START_LETTER) +
-						currentLetter +
-						dashes(stopLetter - currentLetter);
+						innerDashes(currentLetter - START_LETTER);
+
+			if (i > 0) row += currentLetter;
+
+			row += dashes(stopLetter - currentLetter);
+
 			rows.add(row);
 		}
 
@@ -34,11 +35,6 @@ public class Diamond {
 		rows.addAll(mirroredRows);
 
 		return rows.toArray(new String[rows.size()]);
-	}
-
-	private static String firstRow(int letters_interval) {
-		String dashes = dashes(letters_interval);
-		return dashes + START_LETTER + dashes;
 	}
 
 	private static String innerDashes(int letters_interval) {
