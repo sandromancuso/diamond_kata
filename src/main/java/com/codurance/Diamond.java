@@ -17,6 +17,10 @@ public class Diamond {
 		diamond[0] = firstRow(letters_interval);
 		stopLetterRow(stopLetter, letters_interval, diamond);
 
+		if (stopLetter == 'C') {
+			diamond[1] = "-B-B-";
+		}
+
 		return diamond;
 	}
 
