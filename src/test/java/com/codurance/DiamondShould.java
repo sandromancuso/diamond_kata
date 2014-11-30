@@ -56,11 +56,10 @@ public class DiamondShould {
 	}
 
 	@Test public void
-	have_rows_between_the_first_row_and_stop_letter_row() {
-		String[] diamond = Diamond.upTo('D');
+	have_B_row_when_stop_letter_is_C() {
+		String[] diamond = Diamond.upTo('C');
 
-		assertThat(diamond[1], is("--B-B--"));
-		assertThat(diamond[2], is("-C---C-"));
+		assertThat(diamond[1], is("-B-B-"));
 	}
 
 }
