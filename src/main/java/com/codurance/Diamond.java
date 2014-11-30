@@ -17,20 +17,15 @@ public class Diamond {
 		diamond[0] = firstRow(letters_interval);
 		stopLetterRow(stopLetter, letters_interval, diamond);
 
-		if (stopLetter > 'A') {
-			diamond[1] = dashes(stopLetter - 'B') +
-						 "B" +
-					     dashes('B' - START_LETTER) +
-					     "B" +
-					     dashes(stopLetter - 'B');
-		}
-		if (stopLetter == 'D') {
-			diamond[2] = dashes(stopLetter - 'C') +
-					"C" +
-					innerDashes('C' - START_LETTER) +
-					"C" +
-					dashes(stopLetter - 'C');
-
+		if (letters_interval > 1) {
+			for (int i = 1; i < letters_interval; i++) {
+				char currentLetter = (char)(START_LETTER + i);
+				diamond[i] = dashes(stopLetter - currentLetter) +
+						currentLetter +
+						innerDashes(currentLetter - START_LETTER) +
+						currentLetter +
+						dashes(stopLetter - currentLetter);
+			}
 		}
 
 		return diamond;
