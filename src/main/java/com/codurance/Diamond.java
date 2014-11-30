@@ -18,6 +18,8 @@ public class Diamond {
 			dashes = "-";
 		} else if (letters_interval == 2) {
 			dashes = "---";
+		} else if (letters_interval == 3) {
+			dashes = "-----";
 		}
 		if (letters_interval > 0) {
 			diamond[letters_interval] = stopLetter + dashes + stopLetter;

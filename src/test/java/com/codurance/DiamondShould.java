@@ -48,4 +48,11 @@ public class DiamondShould {
 	    assertThat(diamond[2], is("C---C"));
 	}
 
+	@Test public void
+	have_D_in_the_fourth_row() {
+		String[] diamond = Diamond.upTo('D');
+
+	    assertThat(diamond[3], is("D-----D"));
+	}
+
 }
