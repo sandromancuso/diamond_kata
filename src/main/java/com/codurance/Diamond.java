@@ -13,11 +13,14 @@ public class Diamond {
 
 		diamond[0] = firstRow(letters_interval);
 
+		String dashes = "";
 		if (letters_interval == 1) {
-			diamond[1] = "B-B";
+			dashes = "-";
+		} else if (letters_interval == 2) {
+			dashes = "---";
 		}
-		if (letters_interval == 2) {
-			diamond[2] = "C---C";
+		if (letters_interval > 0) {
+			diamond[letters_interval] = stopLetter + dashes + stopLetter;
 		}
 		return diamond;
 	}
