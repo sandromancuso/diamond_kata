@@ -13,22 +13,19 @@ public class Diamond {
 
 		diamond[0] = firstRow(letters_interval);
 
-		String dashes = "";
-		if (letters_interval == 1) {
-			dashes = "-";
-		} else if (letters_interval == 2) {
-			dashes = "---";
-		} else if (letters_interval == 3) {
-			dashes = "-----";
-		}
 		if (letters_interval > 0) {
+			String dashes = dashes((letters_interval * 2) - 1);
 			diamond[letters_interval] = stopLetter + dashes + stopLetter;
 		}
 		return diamond;
 	}
 
 	private static String firstRow(int letters_interval) {
-		String dashes = repeat("-", letters_interval);
+		String dashes = dashes(letters_interval);
 		return dashes + START_LETTER + dashes;
+	}
+
+	private static String dashes(int number) {
+		return repeat("-", number);
 	}
 }
