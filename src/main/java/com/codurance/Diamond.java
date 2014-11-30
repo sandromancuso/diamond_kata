@@ -1,5 +1,8 @@
 package com.codurance;
 
+import java.util.List;
+
+import static java.util.Arrays.asList;
 import static org.apache.commons.lang.StringUtils.repeat;
 
 public class Diamond {
@@ -27,5 +30,10 @@ public class Diamond {
 
 	private static String dashes(int number) {
 		return repeat("-", number);
+	}
+
+	public static void main(String[] args) {
+		List<String> diamondRows = asList(Diamond.upTo('D'));
+		diamondRows.forEach(l -> System.out.println(l));
 	}
 }
