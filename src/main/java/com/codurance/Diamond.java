@@ -17,19 +17,12 @@ public class Diamond {
 		diamond[0] = firstRow(letters_interval);
 		stopLetterRow(stopLetter, letters_interval, diamond);
 
-		if (stopLetter == 'C') {
+		if (stopLetter > 'A') {
 			diamond[1] = dashes(stopLetter - 'B') +
 						 "B" +
 					     dashes('B' - START_LETTER) +
 					     "B" +
 					     dashes(stopLetter - 'B');
-		}
-		if (stopLetter == 'D') {
-			diamond[1] = dashes(stopLetter - 'B') +
-						"B" +
-						dashes('B' - START_LETTER) +
-						"B" +
-						dashes(stopLetter - 'B');
 		}
 
 		return diamond;
