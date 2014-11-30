@@ -1,19 +1,14 @@
 package com.codurance;
 
-import static java.lang.String.valueOf;
+import static org.apache.commons.lang.StringUtils.repeat;
 
 public class Diamond {
-
 
 	public static final char START_LETTER = 'A';
 
 	public static String upTo(char letter) {
-		if ('C' == letter) {
-			return "--" + START_LETTER + "--";
-		}
-		if ('B' == letter) {
-			return "-" + START_LETTER + "-";
-		}
-		return valueOf(START_LETTER);
+		int distance_between_letters = letter - START_LETTER;
+		String dashes = repeat("-", distance_between_letters);
+		return dashes + START_LETTER + dashes;
 	}
 }
