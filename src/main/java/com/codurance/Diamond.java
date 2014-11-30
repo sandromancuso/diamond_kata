@@ -18,10 +18,18 @@ public class Diamond {
 		stopLetterRow(stopLetter, letters_interval, diamond);
 
 		if (stopLetter == 'C') {
-			diamond[1] = "-B-B-";
+			diamond[1] = dashes(stopLetter - 'B') +
+						 "B" +
+					     dashes('B' - START_LETTER) +
+					     "B" +
+					     dashes(stopLetter - 'B');
 		}
 		if (stopLetter == 'D') {
-			diamond[1] = "--B-B--";
+			diamond[1] = dashes(stopLetter - 'B') +
+						"B" +
+						dashes('B' - START_LETTER) +
+						"B" +
+						dashes(stopLetter - 'B');
 		}
 
 		return diamond;
@@ -34,13 +42,13 @@ public class Diamond {
 		}
 	}
 
-	private static String innerDashes(int letters_interval) {
-		return dashes((letters_interval * 2) - 1);
-	}
-
 	private static String firstRow(int letters_interval) {
 		String dashes = dashes(letters_interval);
 		return dashes + START_LETTER + dashes;
+	}
+
+	private static String innerDashes(int letters_interval) {
+		return dashes((letters_interval * 2) - 1);
 	}
 
 	private static String dashes(int number) {
