@@ -12,11 +12,9 @@ public class Diamond {
 	public static final char START_LETTER = 'A';
 
 	public static String[] upTo(char stopLetter) {
-		int letters_interval = stopLetter - START_LETTER;
-
 		List<String> rows = new ArrayList<>();
 
-		for (int i = 0; i <= letters_interval; i++) {
+		for (int i = 0; i <= stopLetter - START_LETTER; i++) {
 			char currentLetter = (char)(START_LETTER + i);
 			String row = dashes(stopLetter - currentLetter) +
 						currentLetter +
