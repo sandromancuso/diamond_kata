@@ -11,18 +11,16 @@ public class Diamond {
 
 	public static String[] upTo(char stopLetter) {
 		int letters_interval = stopLetter - START_LETTER;
-
 		String[] diamond = new String[letters_interval + 1];
 
 		diamond[0] = firstRow(letters_interval);
-
 		for (int i = 1; i <= letters_interval; i++) {
 			char currentLetter = (char)(START_LETTER + i);
 			diamond[i] = dashes(stopLetter - currentLetter) +
-					currentLetter +
-					innerDashes(currentLetter - START_LETTER) +
-					currentLetter +
-					dashes(stopLetter - currentLetter);
+						currentLetter +
+						innerDashes(currentLetter - START_LETTER) +
+						currentLetter +
+						dashes(stopLetter - currentLetter);
 		}
 
 		return diamond;
