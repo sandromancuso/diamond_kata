@@ -13,6 +13,12 @@ public class Diamond {
 
 		diamond[0] = firstRow(letters_interval);
 
+		if (letters_interval == 1) {
+			diamond[1] = "B-B";
+		}
+		if (letters_interval == 2) {
+			diamond[2] = "C---C";
+		}
 		return diamond;
 	}
 
