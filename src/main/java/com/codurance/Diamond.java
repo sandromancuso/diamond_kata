@@ -15,27 +15,17 @@ public class Diamond {
 		String[] diamond = new String[letters_interval + 1];
 
 		diamond[0] = firstRow(letters_interval);
-		stopLetterRow(stopLetter, letters_interval, diamond);
 
-		if (letters_interval > 1) {
-			for (int i = 1; i < letters_interval; i++) {
-				char currentLetter = (char)(START_LETTER + i);
-				diamond[i] = dashes(stopLetter - currentLetter) +
-						currentLetter +
-						innerDashes(currentLetter - START_LETTER) +
-						currentLetter +
-						dashes(stopLetter - currentLetter);
-			}
+		for (int i = 1; i <= letters_interval; i++) {
+			char currentLetter = (char)(START_LETTER + i);
+			diamond[i] = dashes(stopLetter - currentLetter) +
+					currentLetter +
+					innerDashes(currentLetter - START_LETTER) +
+					currentLetter +
+					dashes(stopLetter - currentLetter);
 		}
 
 		return diamond;
-	}
-
-	private static void stopLetterRow(char stopLetter, int letters_interval, String[] diamond) {
-		if (letters_interval > 0) {
-			String dashes = innerDashes(letters_interval);
-			diamond[letters_interval] = stopLetter + dashes + stopLetter;
-		}
 	}
 
 	private static String firstRow(int letters_interval) {
