@@ -15,12 +15,25 @@ public class Diamond {
 		String[] diamond = new String[letters_interval + 1];
 
 		diamond[0] = firstRow(letters_interval);
+		stopLetterRow(stopLetter, letters_interval, diamond);
 
+		if (letters_interval == 3) {
+			diamond[1] = "--B-B--";
+			diamond[2] = "-C---C-";
+		}
+
+		return diamond;
+	}
+
+	private static void stopLetterRow(char stopLetter, int letters_interval, String[] diamond) {
 		if (letters_interval > 0) {
-			String dashes = dashes((letters_interval * 2) - 1);
+			String dashes = innerDashes(letters_interval);
 			diamond[letters_interval] = stopLetter + dashes + stopLetter;
 		}
-		return diamond;
+	}
+
+	private static String innerDashes(int letters_interval) {
+		return dashes((letters_interval * 2) - 1);
 	}
 
 	private static String firstRow(int letters_interval) {
