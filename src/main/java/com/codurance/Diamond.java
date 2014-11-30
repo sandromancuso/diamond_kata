@@ -24,6 +24,14 @@ public class Diamond {
 					     "B" +
 					     dashes(stopLetter - 'B');
 		}
+		if (stopLetter == 'D') {
+			diamond[2] = dashes(stopLetter - 'C') +
+					"C" +
+					innerDashes('C' - START_LETTER) +
+					"C" +
+					dashes(stopLetter - 'C');
+
+		}
 
 		return diamond;
 	}

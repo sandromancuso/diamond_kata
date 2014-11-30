@@ -69,4 +69,11 @@ public class DiamondShould {
 		assertThat(diamond[1], is("--B-B--"));
 	}
 
+	@Test public void
+	have_C_row_when_stop_letter_is_D() {
+		String[] diamond = Diamond.upTo('D');
+
+		assertThat(diamond[2], is("-C---C-"));
+	}
+
 }
