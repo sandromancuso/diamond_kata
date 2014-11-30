@@ -1,6 +1,7 @@
 package com.codurance;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -26,6 +27,11 @@ public class Diamond {
 						dashes(stopLetter - currentLetter);
 			rows.add(row);
 		}
+
+		List<String> mirroredRows = new ArrayList<>(rows);
+		Collections.reverse(mirroredRows);
+		mirroredRows.remove(0);
+		rows.addAll(mirroredRows);
 
 		return rows.toArray(new String[rows.size()]);
 	}

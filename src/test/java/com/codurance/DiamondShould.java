@@ -1,6 +1,5 @@
 package com.codurance;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -27,12 +26,6 @@ public class DiamondShould {
 		String[] diamond = Diamond.upTo('C');
 
 		assertThat(diamond[0], is("--A--"));
-	}
-
-	@Test public void
-	have_two_rows_when_stop_letter_is_B() {
-		String[] diamond = Diamond.upTo('B');
-		assertThat(diamond.length, is(2));
 	}
 
 	@Test public void
@@ -87,7 +80,6 @@ public class DiamondShould {
 		assertThat(diamond[3], is("D-----D"));
 	}
 
-	@Ignore
 	@Test public void
 	have_mirrored_rows_at_the_bottom() {
 		String[] diamond = Diamond.upTo('D');
