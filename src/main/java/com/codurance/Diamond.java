@@ -20,6 +20,9 @@ public class Diamond {
 		if (stopLetter == 'C') {
 			diamond[1] = "-B-B-";
 		}
+		if (stopLetter == 'D') {
+			diamond[1] = "--B-B--";
+		}
 
 		return diamond;
 	}
