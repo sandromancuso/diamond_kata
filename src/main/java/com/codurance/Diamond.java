@@ -7,10 +7,17 @@ public class Diamond {
 	public static final char START_LETTER = 'A';
 
 	public static String[] upTo(char stopLetter) {
-		int distance_between_letters = stopLetter - START_LETTER;
-		String[] diamond = new String[distance_between_letters + 1];
-		String dashes = repeat("-", distance_between_letters);
-		diamond[0] = dashes + START_LETTER + dashes;
+		int letters_interval = stopLetter - START_LETTER;
+
+		String[] diamond = new String[letters_interval + 1];
+
+		diamond[0] = firstRow(letters_interval);
+
 		return diamond;
+	}
+
+	private static String firstRow(int letters_interval) {
+		String dashes = repeat("-", letters_interval);
+		return dashes + START_LETTER + dashes;
 	}
 }
