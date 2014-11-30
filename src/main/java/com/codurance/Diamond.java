@@ -6,9 +6,11 @@ public class Diamond {
 
 	public static final char START_LETTER = 'A';
 
-	public static String upTo(char letter) {
+	public static String[] upTo(char letter) {
 		int distance_between_letters = letter - START_LETTER;
+		String[] diamond = new String[distance_between_letters + 1];
 		String dashes = repeat("-", distance_between_letters);
-		return dashes + START_LETTER + dashes;
+		diamond[0] = dashes + START_LETTER + dashes;
+		return diamond;
 	}
 }
