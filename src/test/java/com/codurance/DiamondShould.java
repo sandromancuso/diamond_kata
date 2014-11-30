@@ -76,4 +76,14 @@ public class DiamondShould {
 		assertThat(diamond[2], is("-C---C-"));
 	}
 
+	@Test public void
+	have_rows_from_A_to_D() {
+		String[] diamond = Diamond.upTo('D');
+
+		assertThat(diamond[0], is("---A---"));
+		assertThat(diamond[1], is("--B-B--"));
+		assertThat(diamond[2], is("-C---C-"));
+		assertThat(diamond[3], is("D-----D"));
+	}
+
 }
