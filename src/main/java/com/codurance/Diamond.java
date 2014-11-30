@@ -14,19 +14,17 @@ public class Diamond {
 		int letters_interval = stopLetter - START_LETTER;
 
 		List<String> rows = new ArrayList<>();
-		String[] diamond = new String[letters_interval + 1];
 
-		diamond[0] = firstRow(letters_interval);
 		rows.add(firstRow(letters_interval));
 
 		for (int i = 1; i <= letters_interval; i++) {
 			char currentLetter = (char)(START_LETTER + i);
-			diamond[i] = dashes(stopLetter - currentLetter) +
+			String row = dashes(stopLetter - currentLetter) +
 						currentLetter +
 						innerDashes(currentLetter - START_LETTER) +
 						currentLetter +
 						dashes(stopLetter - currentLetter);
-			rows.add(diamond[i]);
+			rows.add(row);
 		}
 
 		return rows.toArray(new String[rows.size()]);
