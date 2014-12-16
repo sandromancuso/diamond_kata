@@ -12,14 +12,13 @@ public class Diamond {
 
 	public static String[] upTo(char stopLetter) {
 		List<String> rows = createRows(stopLetter);
-		List<String> mirroredRows = mirroredRows(rows);
-
+		List<String> mirroredRows = mirrorRows(rows);
 		rows.addAll(mirroredRows);
 
 		return rows.toArray(new String[rows.size()]);
 	}
 
-	private static List<String> mirroredRows(List<String> rows) {
+	private static List<String> mirrorRows(List<String> rows) {
 		List<String> mirroredRows = new ArrayList<>(rows);
 		reverse(mirroredRows);
 		mirroredRows.remove(0);
@@ -39,14 +38,11 @@ public class Diamond {
 		char currentLetter = (char)(START_LETTER + letterIndex);
 		String outerDashes = dashes(stopLetter - currentLetter);
 
-		StringBuilder row = new StringBuilder()
-									.append(outerDashes)
-									.append(currentLetter)
-									.append(innerDashes(currentLetter));
-		if (letterIndex > 0) row.append(currentLetter);
-		row.append(outerDashes);
+		String row = outerDashes + currentLetter + innerDashes(currentLetter);
+		if (letterIndex > 0) row += currentLetter;
+		row += outerDashes;
 
-		return row.toString();
+		return row;
 	}
 
 	private static String innerDashes(int currentLetter) {
